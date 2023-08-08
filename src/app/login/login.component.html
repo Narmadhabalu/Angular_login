@@ -1,0 +1,10 @@
+<p>Enter the Credential</p>
+<div>
+    <label for="Uname"><b>Username</b></label><br>
+    <input type="text" [(ngModel)]="username" placeholder="enter the user id" name="uname" required>
+    <br>
+    <label for="password"><b>password</b></label><br>
+    <input type="password"name="password"[(ngModel)]="password" required><br>
+    <form><button (click)="login()">login</button>
+    </form>
+</div>
