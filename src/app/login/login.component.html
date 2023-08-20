@@ -1,5 +1,9 @@
-<p>Enter the Credential</p>
-<div>
+
+<br>
+<p style="text-align: center;font-size: large;">Enter the Credential</p>
+
+
+ <!-- <div>
     <label for="Uname"><b>Username</b></label><br>
     <input type="text" [(ngModel)]="username" placeholder="enter the user id" name="uname" required>
     <br>
@@ -7,4 +11,17 @@
     <input type="password"name="password"[(ngModel)]="password" required><br>
     <form><button (click)="login()">login</button>
     </form>
+</div>  -->
+
+
+<div>
+    <form>
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" [(ngModel)]="password" class="form-control" id="exampleInputPassword1">
+    <button type="submit" (click)="login()" class="btn btn-primary">Submit</button>
+
+  </form>
 </div>
