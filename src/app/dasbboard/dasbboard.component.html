@@ -1,0 +1,48 @@
+<p>dasbboard works!</p>
+
+
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">NAMES</th>
+        <th scope="col">HEROS</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let anime of service.anime()">
+      <tr>
+        
+        <td> {{anime.name}} </td>
+        <td>{{anime.hero}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <table mat-table  *ngFor="let dataSource of apidata" class="mat-elevation-z8 demo-table">
+    <!-- Position Column -->
+    <div>
+    <ng-container matColumnDef="userId">
+      <th mat-header-cell *matHeaderCellDef>userId</th>
+      <td mat-cell >{{dataSource.userId}}</td>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>id</th>
+      <td mat-cell >{{dataSource.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>title</th>
+      <td mat-cell >{{dataSource.title}}</td>
+    </ng-container>
+    <ng-container matColumnDef="completed">
+      <th mat-header-cell *matHeaderCellDef>completed</th>
+      <td mat-cell >{{dataSource.completed}}</td>
+    </ng-container>
+  
+  </div>
+    
+  </table>
+
+  

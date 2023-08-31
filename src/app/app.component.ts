@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FirstserviceService } from './firstservice.service';
 
 @Component({
   selector: 'app-root',
@@ -7,23 +8,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private router: Router){
+  title = 'pro-one';
+
+  constructor( private router:Router,private service:FirstserviceService){
+
+    this.logoutCheck(); 
+  } 
+
+  loginData:boolean=false;
+ //condition  for button to display.
+  logoutCheck(){
+    if(localStorage.getItem("email")!=null && localStorage.getItem('password')!=null){
+      
+      this.loginData=true;
+    
+    }
+  }
+  Logout():void{
+    localStorage.removeItem('email');
+    localStorage.removeItem('password');
+    this.logoutCheck();
+    this.router.navigate(['Login']);
     
   }
-  title = 'AngularTraining';
-  isDisabled: boolean = false;
 
-  dynamicTxt:string = 'This is Angular training';
+  apidata:any="";
 
-  // btnClick(){
-  //   console.log('I was clicked');
-  // }
+ngOnInit():void{
 
-  LoginClicked(){
-      this.router.navigate(['Loginpath']);
-  }
+  this.service.getdetails().subscribe((data:any[])=>{
 
-  DashboardClicked(){
-    this.router.navigate(['Dashboardpath']);
-  }
+    this.apidata=data;
+    console.log(this.apidata)
+  })
+}
+
 }
