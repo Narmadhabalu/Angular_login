@@ -1,78 +1,27 @@
 
+<br>
+<p style="text-align: center;font-size: large;">Enter the Credential</p>
 
-<!-- <div class="form">
-<form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" name="email" [(ngModel)]="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" name="password" [(ngModel)]="password"  class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-   
-    <button type="submit" (click)="login()"[disabled]="email==''&&password=='' " class="btn btn-primary">Submit</button>
+
+ <!-- <div>
+    <label for="Uname"><b>Username</b></label><br>
+    <input type="text" [(ngModel)]="username" placeholder="enter the user id" name="uname" required>
+    <br>
+    <label for="password"><b>password</b></label><br>
+    <input type="password"name="password"[(ngModel)]="password" required><br>
+    <form><button (click)="login()">login</button>
+    </form>
+</div>  -->
+
+
+<div>
+    <form>
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" [(ngModel)]="password" class="form-control" id="exampleInputPassword1">
+    <button type="submit" (click)="login()" class="btn btn-primary">Submit</button>
+
   </form>
 </div>
-<div class="forms">
-
-  <form>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname">
-  </form>
-</div> -->
-
-<form>  
-  <div class="body border" style="height:500px; text-align: center;">
-  <div class="container-md  border w-50 h-100" style="border-top: none;">  
-     
-    <div class="row ">
-      <div class="col align-items-center my-3 " style="padding-top: 100px;">
-        <label class="mx-3">Username</label>   
-        <input type="text" class="w-50 " style="height: 45px;" [(ngModel)]="email" placeholder="Enter Username" name="username" required>  
-      </div>
-    </div>
-
-     <div class="row">
-      <div class="col align-items-center " >
-        <label class="mx-3">Password</label>   
-        <input type="password" class="w-50" style="height: 45px;" [(ngModel)]="password" placeholder="Enter Password" name="password" required>  
-      </div>
-     </div>
-      <div class="row my-2 d-grid justify-content-end  " style="text-align: left; ">
-        <div class="col " style="padding-right: 120px; padding-top: 10px;">
-          <button type="submit"   class="btn btn-primary" (click)="login()"[disabled]="email==''&&password=='' ">Login</button>   
-        </div>
-       </div>
-      
-  </div>  
-</div> 
-
-
-</form>
-
-
-
-  <!-- <div class="container-md">
-    
-    <div class="row g-3 align-items-center">
-      <div class="col-auto">
-        <label for="inputPassword6" class="col-form-label">Password</label>
-      </div>
-      <div class="col-auto">
-        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-      </div>
-
-      <div class="row g-3 align-items-center">
-        <div class="col-auto">
-          <label for="forusername" class="col-form-label">Email</label>
-        </div>
-        <div class="col-auto">
-          <input type="password" id="forusername" class="form-control" aria-describedby="passwordHelpInline">
-        </div>
-        
-      </div>
-    </div>
-  </div> -->

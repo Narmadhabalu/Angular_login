@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
-import { FirstserviceService } from '../firstservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,27 +7,15 @@ import { FirstserviceService } from '../firstservice.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-
-  constructor(private router:Router ,private service:FirstserviceService)
-  {
-
-  }
   email:string='';
   password:string='';
 
+  constructor(private router:Router){
 
-  login():void{
-    
-    if(this.email==this.service.email&&this.password==this.service.password){
-      console.log(this.email);
-      console.log(this.password);
-     localStorage.setItem('email',this.email);
-     localStorage.setItem('password',this.password);
-      this.router.navigate(['Dashboard']);
-      
-    }
   }
-
+  login() {
+    console.log('Logged in sucessfully');
+    this.router.navigate(['Dashboardpath'])
+  }
 
 }

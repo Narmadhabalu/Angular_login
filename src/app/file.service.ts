@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import {  Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileService {
 
-  constructor() { }
+  constructor(public HttpClint:HttpClient) { }
   email = 'narmadha@27';
   password = 'nar27';
   public GetText(){
@@ -24,4 +27,17 @@ export class FileService {
   public getStudent(){
     return this.student;
   }
+
+  private apiurl="https://jsonplaceholder.typicode.com/todos";
+
+   httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
+  getdetails():Observable<any>{
+    return this.HttpClint.get(this.apiurl)
+  }
+
 }

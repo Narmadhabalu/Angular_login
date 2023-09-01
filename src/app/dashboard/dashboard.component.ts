@@ -13,4 +13,17 @@ export class DashboardComponent {
   }
  
 
-}
+  apidata:any="";
+  
+  ngOnInit():void{
+  
+    this.service.getdetails().subscribe((data:any[])=>{
+  
+      this.apidata=data;
+      console.log(this.apidata)
+    })
+  }
+  
+  
+  }
+
